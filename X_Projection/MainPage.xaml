@@ -1,0 +1,345 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="X_Projection.MainPage" 
+    Width="800" Height="900">
+	<UserControl.Resources>
+		<Storyboard x:Name="Rotate">
+			<DoubleAnimation Duration="0:0:1" To="-60" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_0" x:Name="Banner0_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="-60" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_00" x:Name="Banner00_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_1" x:Name="Banner1_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="0" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_11" x:Name="Banner11_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="60" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_2" x:Name="Banner2_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="60" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_22" x:Name="Banner22_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="120" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_3" x:Name="Banner3_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="120" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_33" x:Name="Banner33_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="180" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_4" x:Name="Banner4_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="180" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_44" x:Name="Banner44_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="240" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_5" x:Name="Banner5_Rotate"/>
+			<DoubleAnimation Duration="0:0:1" To="240" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="Banner_55" x:Name="Banner55_Rotate"/>
+		</Storyboard>
+	</UserControl.Resources>
+    <Canvas x:Name="LayoutRoot">
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF393939"/>
+                <GradientStop Color="#FFDADADA" Offset="1"/>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Canvas x:Name="Banners" Width="800" Height="900" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.5,0.5">
+        	<Canvas.Projection>
+        		<PlaneProjection CenterOfRotationY="0" CenterOfRotationX="0"/>
+        	</Canvas.Projection>
+        	<Canvas.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Canvas.RenderTransform>
+			
+            <Canvas x:Name="Banner_0" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="1,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection CenterOfRotationX="1" RotationY="-60"/>
+            	</Canvas.Projection>
+            	<Canvas.Background>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"> 
+            			<GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Canvas.Background>
+			    <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 0" TextWrapping="Wrap" Foreground="#FFFFFFFF"/>
+               <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner0" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		   <TextBlock Text="Text0" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage0"/>
+            </Canvas>
+			
+		   <Canvas x:Name="Banner_00" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" CenterOfRotationX="1" RotationY="-60"/>
+            	</Canvas.Projection>
+            	<Canvas.Background>
+            		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            			<GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+            		</LinearGradientBrush>
+            	</Canvas.Background>
+				<TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 00" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+					<TextBlock.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform ScaleX="-1"/>
+							<SkewTransform/>
+							<RotateTransform/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</TextBlock.RenderTransform>
+				</TextBlock>
+               	<Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner00" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000" RenderTransformOrigin="0.5,0.5">
+               		<Rectangle.RenderTransform>
+               			<TransformGroup>
+               				<ScaleTransform ScaleX="-1"/>
+               				<SkewTransform/>
+               				<RotateTransform/>
+               				<TranslateTransform/>
+               			</TransformGroup>
+               		</Rectangle.RenderTransform>
+               	</Rectangle>
+       		   	<TextBlock Text="Text 00" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage00" RenderTransformOrigin="0.5,0.5">
+       		   		<TextBlock.RenderTransform>
+       		   			<TransformGroup>
+       		   				<ScaleTransform ScaleX="-1"/>
+       		   				<SkewTransform/>
+       		   				<RotateTransform/>
+       		   				<TranslateTransform/>
+       		   			</TransformGroup>
+       		   		</TextBlock.RenderTransform>
+       		   	</TextBlock>
+            </Canvas>
+			
+            <Canvas x:Name="Banner_1" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                       <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                 <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 1" TextWrapping="Wrap" Foreground="#FFFFFFFF"/>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner1" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 1" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage1"/>
+            </Canvas>
+			
+			  <Canvas x:Name="Banner_11" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+			  	<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                       <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 11" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform ScaleX="-1"/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner11" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 11" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage11" RenderTransformOrigin="0.5,0.5">
+       		     	<TextBlock.RenderTransform>
+       		     		<TransformGroup>
+       		     			<ScaleTransform ScaleX="-1"/>
+       		     			<SkewTransform/>
+       		     			<RotateTransform/>
+       		     			<TranslateTransform/>
+       		     		</TransformGroup>
+       		     	</TextBlock.RenderTransform>
+       		     </TextBlock>
+            </Canvas>
+			
+            <Canvas x:Name="Banner_2" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection CenterOfRotationX="1" RotationY="60"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                      <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 2" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5"/>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner2" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 2" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage2" RenderTransformOrigin="0.5,0.5"/>
+            </Canvas>
+			
+			<Canvas x:Name="Banner_22" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" RotationY="60" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                      <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 22" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform ScaleX="-1"/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner22" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 22" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage22" RenderTransformOrigin="0.5,0.5">
+       		     	<TextBlock.RenderTransform>
+       		     		<TransformGroup>
+       		     			<ScaleTransform ScaleX="-1"/>
+       		     			<SkewTransform/>
+       		     			<RotateTransform/>
+       		     			<TranslateTransform/>
+       		     		</TransformGroup>
+       		     	</TextBlock.RenderTransform>
+       		     </TextBlock>
+            </Canvas>
+			
+            <Canvas x:Name="Banner_3" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+			<Canvas.Projection>
+            		<PlaneProjection CenterOfRotationX="1" RotationY="120"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 3" TextWrapping="Wrap" Foreground="#FFFFFFFF"/>
+				<Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner3" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		    <TextBlock Text="Text 3" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage3"/>
+            </Canvas>
+			
+			<Canvas x:Name="Banner_33" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+			<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" RotationY="120" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 33" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform ScaleX="-1"/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner33" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 33" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage33" RenderTransformOrigin="0.5,0.5">
+       		     	<TextBlock.RenderTransform>
+       		     		<TransformGroup>
+       		     			<ScaleTransform ScaleX="-1"/>
+       		     			<SkewTransform/>
+       		     			<RotateTransform/>
+       		     			<TranslateTransform/>
+       		     		</TransformGroup>
+       		     	</TextBlock.RenderTransform>
+       		     </TextBlock>
+            </Canvas>
+			
+            <Canvas x:Name="Banner_4" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection CenterOfRotationX="1" RotationY="180"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 4" TextWrapping="Wrap" Foreground="#FFFFFFFF"/>
+				<Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner4" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		    <TextBlock Text="Text 4" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage4"/>
+            </Canvas>
+			
+			  <Canvas x:Name="Banner_44" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" RotationY="180" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+               <TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 44" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform ScaleX="-1"/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner44" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 44" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage44" RenderTransformOrigin="0.5,0.5">
+       		     	<TextBlock.RenderTransform>
+       		     		<TransformGroup>
+       		     			<ScaleTransform ScaleX="-1"/>
+       		     			<SkewTransform/>
+       		     			<RotateTransform/>
+       		     			<TranslateTransform/>
+       		     		</TransformGroup>
+       		     	</TextBlock.RenderTransform>
+       		     </TextBlock>
+            </Canvas>
+			
+            <Canvas x:Name="Banner_5" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection RotationY="240" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="10" Canvas.Top="10" Text="Item 5" TextWrapping="Wrap" Foreground="#FFFFFFFF"/>
+				<Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner5" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		    <TextBlock Text="Text 5" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="60" x:Name="txtMessage5"/>
+            </Canvas>
+			
+			 <Canvas x:Name="Banner_55" Height="400" Width="350" Canvas.Top="125" Canvas.Left="05" RenderTransformOrigin="0.5,0.5">
+            	<Canvas.Projection>
+            		<PlaneProjection LocalOffsetZ="-1" RotationY="240" CenterOfRotationX="1"/>
+            	</Canvas.Projection>
+                <Canvas.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                     <GradientStop Color="green"/>
+            			<GradientStop Color="#FFBFA3A3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <TextBlock Canvas.Left="50" Canvas.Top="10" Text="Item 55" TextWrapping="Wrap" Foreground="#FFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                	<TextBlock.RenderTransform>
+                		<TransformGroup>
+                			<ScaleTransform ScaleX="-1"/>
+                			<SkewTransform/>
+                			<RotateTransform/>
+                			<TranslateTransform/>
+                		</TransformGroup>
+                	</TextBlock.RenderTransform>
+                </TextBlock>
+				 <Rectangle Height="50" Width="150" Fill="#FFFFFFAA" RadiusX="10" RadiusY="10" x:Name="rectBanner55" Canvas.Top="50" Canvas.Left="50" Stroke="#FF000000"/>
+       		     <TextBlock Text="Text 55" TextAlignment="Center" TextWrapping="Wrap" Canvas.Top="65" Canvas.Left="190" x:Name="txtMessage55" RenderTransformOrigin="0.5,0.5">
+       		     	<TextBlock.RenderTransform>
+       		     		<TransformGroup>
+       		     			<ScaleTransform ScaleX="-1"/>
+       		     			<SkewTransform/>
+       		     			<RotateTransform/>
+       		     			<TranslateTransform/>
+       		     		</TransformGroup>
+       		     	</TextBlock.RenderTransform>
+       		     </TextBlock>
+            </Canvas>
+			
+        </Canvas>
+        <StackPanel x:Name="btnControls" Height="62" Width="77" Canvas.Left="706" Canvas.Top="8" Orientation="Vertical">
+            <Button x:Name="btnRotateUp" Content="Rotate Right" Width="80" Margin="0,0,0,0" HorizontalAlignment="Center"/>
+            <Button x:Name="btnRotateDown" Content="Rotate Left" Width="80" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Canvas>
+</UserControl>
